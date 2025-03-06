@@ -11,7 +11,22 @@ document.getElementById('todo-form').addEventListener('submit', function(event) 
 
 function addTask(taskText) {
     const li = document.createElement('li');
-    li.textContent = taskText;
+    const taskSpan = document.createElement('span');
+    taskSpan.textContent = taskText;
+
+    // Добавляем обработчик для зачеркивания задачи
+    taskSpan.addEventListener('click', function() {
+        taskSpan.classList.toggle('completed');
+    });
+
+    const editButton = document.createElement('button');
+    editButton.textContent = 'Редактировать';
+    editButton.addEventListener('click', function() {
+        const newText = prompt('Редактировать задачу:', taskSpan.textContent);
+        if (newText !== null && newText.trim() !== '') {
+            taskSpan.textContent = newText.trim();
+        }
+    });
 
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Удалить';
@@ -19,6 +34,8 @@ function addTask(taskText) {
         li.remove();
     });
 
+    li.appendChild(taskSpan);
+    li.appendChild(editButton);
     li.appendChild(deleteButton);
     document.getElementById('todo-list').appendChild(li);
 }
