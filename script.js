@@ -21,6 +21,7 @@ function addTask(taskText) {
 
     const editButton = document.createElement('button');
     editButton.textContent = 'Редактировать';
+    editButton.classList.add('edit-button'); // Добавляем класс для стилизации
     editButton.addEventListener('click', function() {
         const newText = prompt('Редактировать задачу:', taskSpan.textContent);
         if (newText !== null && newText.trim() !== '') {
@@ -30,6 +31,7 @@ function addTask(taskText) {
 
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'Удалить';
+    deleteButton.classList.add('delete-button'); // Добавляем класс для стилизации
     deleteButton.addEventListener('click', function() {
         li.remove();
     });

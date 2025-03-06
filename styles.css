@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #e8f5e9; /* Светло-зеленый фон */
     margin: 0;
     padding: 0;
     display: flex;
@@ -10,16 +10,19 @@ body {
 }
 
 .container {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 350px;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
+    color: #2e7d32; /* Темно-зеленый цвет */
+    font-size: 24px;
+    font-weight: 600;
 }
 
 form {
@@ -30,50 +33,86 @@ form {
 
 input[type="text"] {
     width: 70%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 10px;
+    border: 2px solid #c8e6c9; /* Светло-зеленая граница */
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #2e7d32; /* Темно-зеленая граница при фокусе */
 }
 
 button {
-    padding: 8px 12px;
-    background-color: #28a745;
+    padding: 10px 15px;
+    background-color: #2e7d32; /* Темно-зеленый цвет */
     color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #218838;
+    background-color: #1b5e20; /* Более темный зеленый при наведении */
 }
 
 ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 li {
     display: flex;
     justify-content: space-between;
-    padding: 8px;
-    border-bottom: 1px solid #ccc;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f1f8e9; /* Светло-зеленый фон для задач */
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
 }
 
-li:last-child {
-    border-bottom: none;
+li:hover {
+    background-color: #dcedc8; /* Более светлый зеленый при наведении */
+}
+
+li span {
+    flex-grow: 1;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
 }
 
 li button {
-    background-color: #dc3545;
+    padding: 6px 10px;
+    background-color: #ef5350; /* Красный цвет для кнопок */
     border: none;
     color: #fff;
     border-radius: 4px;
     cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
 }
 
-li button:hover {
-    background-color: #c82333;
+li button.edit-button {
+    background-color: #42a5f5; /* Синий цвет для кнопки редактирования */
+    margin-right: 5px;
+}
+
+li button.edit-button:hover {
+    background-color: #1e88e5; /* Темнее синий при наведении */
+}
+
+li button.delete-button:hover {
+    background-color: #d32f2f; /* Темнее красный при наведении */
 }
 
 .completed {
