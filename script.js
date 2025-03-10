@@ -19,9 +19,10 @@ function addTask(taskText) {
         taskSpan.classList.toggle('completed');
     });
 
+    // Кнопка редактирования с иконкой карандаша
     const editButton = document.createElement('button');
-    editButton.textContent = 'Редактировать';
-    editButton.classList.add('edit-button'); // Добавляем класс для стилизации
+    editButton.innerHTML = '<i class="fas fa-pencil-alt"></i>'; // Иконка карандаша
+    editButton.classList.add('edit-button');
     editButton.addEventListener('click', function() {
         const newText = prompt('Редактировать задачу:', taskSpan.textContent);
         if (newText !== null && newText.trim() !== '') {
@@ -29,9 +30,10 @@ function addTask(taskText) {
         }
     });
 
+    // Кнопка удаления с иконкой крестика
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Удалить';
-    deleteButton.classList.add('delete-button'); // Добавляем класс для стилизации
+    deleteButton.innerHTML = '<i class="fas fa-times"></i>'; // Иконка крестика
+    deleteButton.classList.add('delete-button');
     deleteButton.addEventListener('click', function() {
         li.remove();
     });
